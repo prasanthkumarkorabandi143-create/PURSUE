@@ -77,14 +77,88 @@ function doAuth(mode,role){
 function logout(){localStorage.removeItem(SK);ME=null;UI.menu=false;applyTheme();render()}
 
 /* ============ 5. HEADER ============ */
+
+
 function renderNav(){
- if(!ME){$('#nav').innerHTML=`<a class="lg" onclick="render()" style="color:inherit">${LOGO()}<span class="wm">PURSUE</span></a><span class="sp"></span><button class="btn out sm" style="border-radius:999px;padding:8px 18px" onclick="authModal('login')">Sign in</button><button class="btn sm" style="border-radius:999px;padding:10px 18px;margin-left:6px" onclick="authModal('join')">Join now</button>`;return}
- const un=DB.notes.filter(n=>n.to===ME.id&&!n.read).length;
- const IC=[['home','🏠'],['projects','💼'],['network','🤝'],['messages','💬'],['notes','🔔'],['me','👤'],['settings','⚙️']];
- $('#nav').innerHTML=`<a class="lg" onclick="go('home')" style="color:inherit">${LOGO()}<span class="wm">PURSUE</span></a><span class="sp"></span>`+
- IC.map(([k,i])=>`<button class="ib ${UI.page===k?'on':''} ${k==='notes'&&un?'ring':''}" onclick="go('${k}')" title="${tr(k)}" aria-label="${tr(k)}">${i}${k==='notes'&&un?`<span class="dot">${un}</span>`:''}</button>`).join('');
+
+    // NAVIGATION FOR LOGGED-OUT USERS
+    if(!ME){
+
+        $('#nav').innerHTML=`
+            <a class="lg" onclick="render()" style="color:inherit">
+                ${LOGO()}
+                <span class="wm">PURSUE</span>
+            </a>
+
+            <span class="sp"></span>
+
+            <a href="start.html" class="back-home-btn">
+                ← Back to Home
+            </a>
+
+            <button class="btn out sm"
+                style="border-radius:999px;padding:8px 18px"
+                onclick="authModal('login')">
+                Sign in
+            </button>
+
+            <button class="btn sm"
+                style="border-radius:999px;padding:10px 18px;margin-left:6px"
+                onclick="authModal('join')">
+                Join now
+            </button>
+        `;
+
+        return;
+    }
+
+    // LOGGED-IN USER NAVIGATION
+
+    const un=DB.notes.filter(n=>n.to===ME.id&&!n.read).length;
+
+    const IC=[
+        ['home','🏠'],
+        ['projects','💼'],
+        ['network','🤝'],
+        ['messages','💬'],
+        ['notes','🔔'],
+        ['me','👤'],
+        ['settings','⚙️']
+    ];
+
+    $('#nav').innerHTML=`
+        <a class="lg" onclick="go('home')" style="color:inherit">
+            ${LOGO()}
+            <span class="wm">PURSUE</span>
+        </a>
+
+        <span class="sp"></span>
+
+        ${UI.page==='home' ? `
+            <a href="start.html" class="back-home-btn">
+                ← Back to Home
+            </a>
+        ` : ''}
+    ` +
+    IC.map(([k,i])=>`
+        <button class="ib ${UI.page===k?'on':''} ${k==='notes'&&un?'ring':''}"
+            onclick="go('${k}')"
+            title="${tr(k)}"
+            aria-label="${tr(k)}">
+            ${i}${k==='notes'&&un?`<span class="dot">${un}</span>`:''}
+        </button>
+    `).join('');
+
 }
-document.addEventListener('click',e=>{if(UI.menu&&!e.target.closest('.pm')){UI.menu=false;renderNav()}});
+
+// KEEP THIS EVENT LISTENER
+document.addEventListener('click',e=>{
+    if(UI.menu&&!e.target.closest('.pm')){
+        UI.menu=false;
+        renderNav();
+    }
+});
+
 
 /* ============ 6. PROJECTS: card, filter, details, apply, post ============ */
 function card(p){

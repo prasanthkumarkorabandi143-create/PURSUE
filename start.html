@@ -1,0 +1,443 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PURSUE - Mini Project</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f8f7f2;
+    color: #101b30;
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    border: 2px solid #222;
+}
+
+/* HEADER */
+
+.header {
+    position: relative;
+    max-width: 1380px;
+    margin: auto;
+    padding-top: 34px;
+    text-align: center;
+    height: 177px;
+}
+
+.college-logo {
+    position: absolute;
+    left: 48px;
+    top: 32px;
+    width: 106px;
+    height: 96px;
+    object-fit: contain;
+}
+
+.college-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.location,
+.degree {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+.header-line {
+    width: 73%;
+    height: 3px;
+    background: #d8a321;
+    margin: 12px auto 0;
+    box-shadow: 0 2px 4px #0003;
+}
+
+/* PROJECT CARD */
+
+.project-card {
+    max-width: 1130px;
+    min-height: 275px;
+    margin: 34px auto 0;
+    background: #fff;
+    border: 1px solid #d5d5dc;
+    border-radius: 44px;
+    box-shadow: 0 2px 3px #0004;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 33px 20px 22px;
+    text-align: center;
+}
+
+.project-label {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.project-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 800;
+    margin-top: 21px;
+}
+
+.project-subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 12px;
+}
+
+/* BUTTONS */
+
+.project-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    margin-top: 20px;
+}
+
+.btn {
+    min-width: 155px;
+    padding: 11px 25px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-abstract {
+    background: #172554;
+    color: #fff;
+    border: 2px solid #172554;
+}
+
+.btn-project {
+    background: #d8a321;
+    color: #172554;
+    border: 2px solid #d8a321;
+}
+
+.btn-abstract:hover {
+    background: #263d70;
+    border-color: #263d70;
+    transform: translateY(-3px);
+}
+
+.btn-project:hover {
+    background: #efbd43;
+    border-color: #efbd43;
+    transform: translateY(-3px);
+}
+
+/* TEAM AND GUIDE */
+
+.details {
+    max-width: 1080px;
+    margin: 43px auto 0;
+    display: grid;
+    grid-template-columns: 56% 44%;
+}
+
+.section-heading {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 22px;
+}
+
+.team-list {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    padding-left: 10px;
+}
+
+.team-member {
+    display: grid;
+    grid-template-columns: 210px 130px;
+    align-items: center;
+    font-size: 16px;
+}
+
+.team-member span:last-child {
+    white-space: nowrap;
+}
+
+.guide-name {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 12px 10px;
+}
+
+.guide-info {
+    font-size: 15px;
+    margin: 0 0 12px 10px;
+}
+
+.department {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 43px 0 0 10px;
+}
+
+/* FOOTER */
+
+.footer {
+    max-width: 1240px;
+    margin: 26px auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.footer-left {
+    font-size: 9px;
+    font-weight: 700;
+    color: #737987;
+}
+
+.footer-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 13px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .header {
+        height: auto;
+        padding: 25px 15px 0;
+    }
+
+    .college-logo {
+        position: static;
+        display: block;
+        margin: 0 auto 15px;
+        width: 106px;
+        height: 96px;
+    }
+
+    .college-name {
+        font-size: 27px;
+    }
+
+    .location,
+    .degree {
+        font-size: 19px;
+    }
+
+    .header-line {
+        width: 85%;
+        margin-top: 15px;
+    }
+
+    .project-card {
+        width: 90%;
+        min-height: 275px;
+        margin-top: 30px;
+        border-radius: 28px;
+        padding: 35px 15px;
+    }
+
+    .project-title {
+        font-size: 39px;
+    }
+
+    .project-subtitle {
+        font-size: 16px;
+    }
+
+    .project-buttons {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        min-width: 120px;
+        padding: 11px 15px;
+    }
+
+    .details {
+        width: 82%;
+        grid-template-columns: 1fr;
+        gap: 35px;
+        margin-top: 35px;
+    }
+
+    .department {
+        margin-top: 25px;
+    }
+
+    .footer {
+        width: 85%;
+        flex-direction: column;
+        gap: 15px;
+        margin: 30px auto 20px;
+    }
+
+    .footer-center {
+        position: static;
+        transform: none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- COLLEGE HEADER -->
+
+<header class="header">
+
+    <!-- COLLEGE LOGO URL -->
+    <img
+        src="logo.png"
+        alt="Raghu Engineering College Logo"
+        class="college-logo"
+    >
+
+    <h1 class="college-name">
+        Raghu Engineering College(A)
+    </h1>
+
+    <h2 class="location">Visakhapatnam</h2>
+
+    <h2 class="degree">Bachelor of Technology</h2>
+
+    <div class="header-line"></div>
+
+</header>
+
+<!-- PROJECT INTRODUCTION -->
+
+<section class="project-card">
+
+    <p class="project-label">
+        WEB-BASED MINI PROJECT
+    </p>
+
+    <h1 class="project-title">PURSUE</h1>
+
+    <p class="project-subtitle">
+        Student-Focused Project Discovery &amp; Collaboration Platform
+    </p>
+
+    <!-- NAVIGATION BUTTONS -->
+
+    <div class="project-buttons">
+
+        <a href="abstract.html" class="btn btn-abstract">
+            Abstract
+        </a>
+
+        <a href="index.html?app=1" class="btn btn-project">
+            Project →
+        </a>
+
+    </div>
+
+</section>
+
+<!-- PROJECT TEAM AND GUIDE -->
+
+<section class="details">
+
+    <div class="team">
+
+        <h3 class="section-heading">PROJECT TEAM</h3>
+
+        <div class="team-list">
+
+    <div class="team-member">
+        <span>K.PRASANTH</span>
+        <span>25985A4217</span>
+    </div>
+
+    <div class="team-member">
+        <span>K.AKHIL</span>
+        <span>25985A4218</span>
+    </div>
+
+    <div class="team-member">
+        <span>B.AKASH</span>
+        <span>25985A4203</span>
+    </div>
+
+    <div class="team-member">
+        <span>G.PRAVEEN KUMAR</span>
+        <span>25985A4210</span>
+    </div>
+
+    <div class="team-member">
+        <span>M.THANUJ</span>
+        <span>24981A4233</span>
+    </div>
+
+</div>
+
+    </div>
+
+    <div class="guide">
+
+        <h3 class="section-heading">PROJECT GUIDE</h3>
+
+        <p class="guide-name">
+            Mr. K. Sandeep Kumar
+        </p>
+
+        <p class="guide-info">
+            Assistant Professor
+        </p>
+
+        <p class="guide-info">
+            Department of Computer and Applications
+        </p>
+
+        <p class="department">
+            CSE (AIML)
+        </p>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <p class="footer-left">
+        PURSUE &nbsp;•&nbsp; Student Project Platform
+    </p>
+
+    <p class="footer-center">
+        Academic Project Presentation
+    </p>
+
+</footer>
+
+</body>
+</html>

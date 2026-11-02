@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PURSUE - Project Abstract</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ffffff;
+    color: #172033;
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    padding: 30px;
+}
+
+.page {
+    max-width: 1050px;
+    min-height: 850px;
+    margin: auto;
+    background: #ffffff;
+    padding: 20px 45px;
+}
+.page {
+    max-width: 1050px;
+    min-height: 850px;
+    margin: auto;
+    background: #ffffff;
+    padding: 20px 45px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* CENTER WATERMARK */
+
+.page::before {
+    content: "";
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 420px;
+    height: 420px;
+
+    background-image: url('logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    opacity: 0.07;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* KEEP CONTENT ABOVE WATERMARK */
+
+.page > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* HEADER */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.logo-link {
+    display: inline-block;
+}
+
+.college-logo {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+}
+
+.home-top {
+    text-decoration: none;
+    color: #ffffff;
+    background: #172554;
+    padding: 9px 17px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.home-top:hover {
+    background: #d8a321;
+    color: #172554;
+}
+
+/* TITLE */
+
+.title-section {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.college-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    color: #172554;
+}
+
+.location {
+    font-size: 15px;
+    margin-top: 5px;
+    color: #555;
+}
+
+
+
+/* ABSTRACT CONTENT */
+
+.abstract-content {
+    margin-top: 35px;
+    text-align: justify;
+}
+
+.document-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: #172554;
+    margin-top: 35px;
+    letter-spacing: 1.5px;
+}
+
+.project-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #242525;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.abstract-content p {
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 22px;
+    color: #333c4e;
+    text-align: justify;
+}
+
+.abstract-content strong {
+    color: #172554;
+    font-weight: 700;
+}
+
+/* BOTTOM BUTTON */
+
+.bottom-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.home-bottom {
+    text-decoration: none;
+    background: #172554;
+    color: white;
+    padding: 11px 25px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.home-bottom:hover {
+    background: #d8a321;
+    color: #172554;
+}
+
+/* FOOTER */
+
+.footer {
+    margin-top: 35px;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #737987;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .page {
+        padding: 15px;
+    }
+
+    .college-logo {
+        width: 65px;
+        height: 65px;
+    }
+
+    .college-name {
+        font-size: 20px;
+    }
+
+    .document-title {
+        font-size: 26px;
+    }
+
+    .abstract-content p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .footer {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <!-- Logo also works as Back to Home -->
+        <a href="start.html" class="logo-link" title="Back to Home">
+
+            <img
+                src="logo.png"
+                alt="Raghu Engineering College Logo"
+                class="college-logo"
+            >
+
+        </a>
+
+        <!-- Top Back Button -->
+        <a href="start.html" class="home-top">
+            ← Back to Home
+        </a>
+
+    </header>
+
+    <!-- TITLE -->
+
+    <section class="title-section">
+
+        
+
+        <h1 class="document-title">
+            ABSTRACT
+        </h1>
+
+        <div class="title-line"></div>
+
+    </section>
+
+    <!-- ABSTRACT -->
+
+    <section class="abstract-content">
+
+        <h2 class="project-name" >
+            <b>PURSUE</b>
+        </h2>
+
+        <p>
+            <strong>Pursue</strong> is a front-end web-based
+            freelancing and project collaboration platform designed
+            to help students discover suitable freelance opportunities
+            based on their skills and interests. It provides a centralized
+            interface for <strong>browsing projects</strong>, viewing
+            project details, submitting proposals, bookmarking
+            opportunities, and managing professional profiles and portfolios.
+        </p>
+
+        <p>
+            The platform includes <strong>project search and filtering</strong>,
+            category-based discovery, proposal submission, bookmarking,
+            dashboard management, and profile features. Interactive
+            elements such as <strong>responsive layouts, modal views,
+            dynamic content updates, and client-side data handling</strong>
+            provide a simple and user-friendly experience for students.
+        </p>
+
+        <p>
+            The project is developed using
+            <strong>HTML5, CSS3, and JavaScript</strong>, with browser
+            <strong>localStorage</strong> used for client-side data
+            persistence. JavaScript <strong>event handling and DOM
+            manipulation</strong> support features such as project
+            filtering, proposal submission, bookmarks, and profile
+            management. The responsive interface is designed for
+            consistent use across different screen sizes.
+        </p>
+
+        <p>
+            <strong>FreelancersHub</strong> provides students with a
+            structured environment to <strong>showcase their skills,
+            build portfolios, and gain practical project experience</strong>.
+            The current implementation is a front-end prototype that
+            can later be extended with <strong>backend services, database
+            integration, authentication, communication, and payment
+            features</strong>.
+        </p>
+
+    </section>
+
+    <!-- BOTTOM BACK BUTTON -->
+
+    <div class="bottom-action">
+
+        <a href="start.html" class="home-bottom">
+            ← Back to Home
+        </a>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <span>PURSUE • Student Project Platform</span>
+
+        <span>Academic Mini Project</span>
+
+    </footer>
+
+</div>
+
+</body>
+</html>
